@@ -1,0 +1,5 @@
+https://ant-design.gitee.io/docs/react/use-with-create-react-app/
+
+npx create-react-app antd-demo --template typescript
+cd antd-demo
+npm run start
