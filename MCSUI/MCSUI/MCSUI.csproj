@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58619608-E6C8-4E5C-84D2-5B0950C9103F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MCSUI</RootNamespace>
+    <AssemblyName>MCSUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>D:\MCSClient\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://10.110.160.51/MCSClient/</InstallUrl>
+    <UpdateUrl>http://10.110.160.51/MCSClient/</UpdateUrl>
+    <ApplicationRevision>83</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>863F63D62E86D747FCBE9493786C7970101E75DC</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MCSUI_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MCS Client.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="policy.1.0.TIBCO.Rendezvous, Version=1.0.0.23395, Culture=neutral, PublicKeyToken=1a696d1f90f6158a, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\policy.1.0.TIBCO.Rendezvous.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TIBCO.Rendezvous, Version=1.0.5155.23393, Culture=neutral, PublicKeyToken=1a696d1f90f6158a, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\TIBCO.Rendezvous.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authority\BindingAuthority.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Authority\BindingAuthority.Designer.cs">
+      <DependentUpon>BindingAuthority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authority\PersonalSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Authority\PersonalSetting.Designer.cs">
+      <DependentUpon>PersonalSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authority\RoleSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Authority\RoleSetting.Designer.cs">
+      <DependentUpon>RoleSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonFunction.cs" />
+    <Compile Include="Connected Services\MCSWebServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="CycleTransferListNode.cs" />
+    <Compile Include="Display\AllEquipmentDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Display\AllEquipmentDisplay.Designer.cs">
+      <DependentUpon>AllEquipmentDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Display\ERackDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Display\ERackDisplay.Designer.cs">
+      <DependentUpon>ERackDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Display\StockerDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Display\StockerDisplay.Designer.cs">
+      <DependentUpon>StockerDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_BatchPurgeN2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BatchPurgeN2.Designer.cs">
+      <DependentUpon>Form_BatchPurgeN2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_BatchTransferOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BatchTransferOut.Designer.cs">
+      <DependentUpon>Form_BatchTransferOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Edit.Designer.cs">
+      <DependentUpon>Form_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Main.Designer.cs">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_CurrentJobList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_CurrentJobList.Designer.cs">
+      <DependentUpon>Frm_CurrentJobList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalParameter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Form_ProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ProgressBar.Designer.cs">
+      <DependentUpon>Form_ProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceHelper.cs" />
+    <Compile Include="TimerClass.cs" />
+    <EmbeddedResource Include="Authority\BindingAuthority.resx">
+      <DependentUpon>BindingAuthority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authority\PersonalSetting.resx">
+      <DependentUpon>PersonalSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authority\RoleSetting.resx">
+      <DependentUpon>RoleSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display\AllEquipmentDisplay.resx">
+      <DependentUpon>AllEquipmentDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display\ERackDisplay.resx">
+      <DependentUpon>ERackDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display\StockerDisplay.resx">
+      <DependentUpon>StockerDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_BatchPurgeN2.resx">
+      <DependentUpon>Form_BatchPurgeN2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_BatchTransferOut.resx">
+      <DependentUpon>Form_BatchTransferOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Edit.resx">
+      <DependentUpon>Form_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Main.resx">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ProgressBar.resx">
+      <DependentUpon>Form_ProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_CurrentJobList.resx">
+      <DependentUpon>Frm_CurrentJobList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MCSWebServiceReference\MCSWebService.wsdl" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TIBCO.Rendezvous.dll.config" />
+    <None Include="TIBCO.Rendezvous.netmodule" />
+    <None Include="tibrv.tkt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MCSWebServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MCSWebServiceReference\MCSWebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MCSWebServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MCSWebServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MCSWebServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\FIGURES\loadport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\FIGURES\stocker_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\FIGURES\stocker_exist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\FIGURES\HR.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\FIGURES\BL.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\FIGURES\BR.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\FIGURES\empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\FIGURES\erack_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\FIGURES\erack_exist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\FIGURES\HL.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FIGURES\BL.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FIGURES\BR.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FIGURES\empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FIGURES\erack_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FIGURES\erack_exist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FIGURES\HL.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FIGURES\HR.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FIGURES\loadport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FIGURES\stocker_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FIGURES\stocker_exist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="policy.1.0.TIBCO.Rendezvous">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TIBCO.Rendezvous">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tibrv.dll" />
+    <None Include="FIGURES\stocker_exist_2.png" />
+    <None Include="FIGURES\loadport_1.png" />
+    <None Include="FIGURES\loadport_2.png" />
+    <None Include="FIGURES\loadport_3.png" />
+    <None Include="FIGURES\loadport_4.png" />
+    <None Include="FIGURES\stocker_empty_2.png" />
+    <Content Include="MCS Client.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
